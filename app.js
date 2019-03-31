@@ -19,10 +19,8 @@ app.post('/random_point', function(req, res) {
   cityName = req.body.city;
   console.log(cityName);
 
-  // TODO - deal with spaces in cityName
-
   // Issue request for osm ID from nominatim
-  nominatimUrl="https://nominatim.openstreetmap.org/search?format=json&q=" + cityName;
+  nominatimUrl="https://nominatim.openstreetmap.org/search?format=json&q=" + encodeURIComponent(cityName);
 
   axios.get(nominatimUrl)
     .then(response => {

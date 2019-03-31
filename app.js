@@ -1,6 +1,7 @@
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser');
+const tools = require('./js/tools');
 const app = express()
 const port = 3000
 
@@ -36,8 +37,12 @@ app.post('/random_point', function(req, res) {
           console.log(response);
           polygonData = response;
 
+          // get point
+          point = tools.getRandomPointInMultiPolygon(response.data);
+
           // Render response to browser
-          res.render('random_point', { osmId: osmId })
+          url = "https://www.google.com/maps/search/?api=1&query=" + point[1] + "," + point[0];
+          res.render('random_point', { url: url })
         })
         .catch(error => {
           console.log(error);

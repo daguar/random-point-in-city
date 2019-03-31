@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/daguar/random-point#readme",
   "dependencies": {
+    "@turf/turf": "^5.1.6",
     "axios": "^0.18.0",
     "chai": "^4.2.0",
     "ejs": "^2.6.1",

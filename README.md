@@ -4,9 +4,9 @@ Get a random point in a city (or, I suppose, most places)
 
 ## Status
 
-**WORK IN PROGRESS (WIP)**
+alpha
 
-This is an experiment and likely will not work for you yet. You have been warned!
+This is an experiment and will almost _certainly_ break on you. You have been warned!
 
 ## Running the app
 
@@ -20,3 +20,4 @@ To run tests, run `npm test`
 
 Copyright 2019 Dave Guarino
 MIT license (see LICENSE.md)
+

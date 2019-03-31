@@ -40,9 +40,9 @@ app.post('/random_point', function(req, res) {
           // get point
           point = tools.getRandomPointInMultiPolygon(response.data);
 
-          // Render response to browser
+          // Redirect to point on google maps
           url = "https://www.google.com/maps/search/?api=1&query=" + point[1] + "," + point[0];
-          res.render('random_point', { url: url })
+          res.redirect(url);
         })
         .catch(error => {
           console.log(error);

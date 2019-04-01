@@ -4,12 +4,13 @@ const bodyParser = require('body-parser');
 const tools = require('./js/tools');
 const app = express()
 const port = process.env.PORT || 3000;
+const ga_key = process.env.GA_KEY || '';
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => res.render('index'))
+app.get('/', (req, res) => res.render('index', { ga_key: ga_key }))
 
 app.post('/random_point', function(req, res) {
   var nominatimData;

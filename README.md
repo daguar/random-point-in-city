@@ -12,6 +12,11 @@ This is an experiment and will almost _certainly_ break on you. You have been wa
 
 To run the app, run `node app.js`
 
+## Environment variables
+
+- `GA_KEY` for Google Analytics
+- `ONWATER_API_KEY` for [OnWater.io API](https://onwater.io/)
+
 ## Tests
 
 To run tests, run `npm test`

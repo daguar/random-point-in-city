@@ -17,7 +17,7 @@ function getRandomPointInMultiPolygon(multipolygon) {
   point = turf.point([lng, lat]);
   inside = turf.inside(point, multipolygon.geometries[0]);
 
-  if(inside) {
+  if(inside === true) {
     return point.geometry.coordinates;
   }
   else {

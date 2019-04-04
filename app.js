@@ -8,7 +8,6 @@ const ga_key = process.env.GA_KEY || '';
 
 // Config for OnWater API key
 require('dotenv').config();
-console.log(process.env.ONWATER_API_KEY);
 const onwater_api_key = process.env.ONWATER_API_KEY || '';
 
 app.set('view engine', 'ejs')
@@ -46,7 +45,6 @@ app.post('/random_point', function(req, res) {
             point = tools.getRandomPointInMultiPolygon(polygon);
             // Issue request to check whether in water
             onWaterUrl = "https://api.onwater.io/api/v1/results/" + lat + "," + lng + "?access_token=" + onwater_api_key;
-
             console.log("trying water API attempt # " + attemptNumber);
             console.log(onWaterUrl);
 
@@ -54,6 +52,7 @@ app.post('/random_point', function(req, res) {
               .then(response => {
                 onWater = response.data.water;
                 console.log('onWater result: ' + onWater);
+
                 // If on LAND, redirect to that awesome point
                 if(onWater === false) {
                   url = "https://www.google.com/maps/search/?api=1&query=" + point[1] + "," + point[0];

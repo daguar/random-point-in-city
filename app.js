@@ -61,7 +61,7 @@ app.post('/random_point', async function(req, res) {
     try {
       response = await axios.get(polygonUrl)
 
-      returnedPolygon = response.data;
+      var returnedPolygon = response.data;
 
       try {
         var url = await findNonWaterPointUrl(returnedPolygon, 1);
